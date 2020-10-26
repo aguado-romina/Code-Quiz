@@ -1,4 +1,3 @@
-//Questions??
 let questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -28,24 +27,3 @@ let questions = [
 
 ];
 
-// Renders questions and choices to page: 
-function render(questionIndex) {
-    // Clears existing data 
-    questionsDiv.innerHTML = "";
-    ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
-    for (var i = 0; i < questions.length; i++) {
-        // Appends question title only
-        var userQuestion = questions[questionIndex].title;
-        var userChoices = questions[questionIndex].choices;
-        questionsDiv.textContent = userQuestion;
-    }
-    // New for each for question choices
-    userChoices.forEach(function (newItem) {
-        var listItem = document.createElement("li");
-        listItem.textContent = newItem;
-        questionsDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
-        listItem.addEventListener("click", (compare));
-    })
-}
