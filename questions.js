@@ -29,55 +29,51 @@ let questions = [
 ];
 
 
-let score = 0;
 let questionIndex = 0;
+let time = questions.length * 15;
+let timerId; 
 
-let currentTime = document.querySelector("#currentTime");
-let timer = document.querySelector("#startTime");
-let questionsDiv = document.querySelector("#questionsDiv");
-let wrapper = document.querySelector("#wrapper");
+//Variables to reference elements in Index.html//
+let questionsEl = document.getElementById("questions");
+//let timerEl = document.getElementById.length("currentTime");
+let choicesEl = document.getElementById("choices");
+let startBtn = document.getElementById("start");
 
-let secondsLeft = 76;
-let holdInterval = 0;
-let penalty = 10;
-let ulCreate = document.createElement("ul");
+//Funtion for quiz start//
+function startQuiz() { 
+    //also start timer//
+    let startScreenEl = document.getElementById("quizQuestions");
+    startScreenEl.setAttribute("class", "hide");
 
-// Starts timer button, shows user a display of time left on the screen//
-timer.addEventListener("click", function () {
-    // We are checking zero because its originally set to zero
-    if (holdInterval === 0) {
-        holdInterval = setInterval(function () {
-            secondsLeft--;
-            currentTime.textContent = "Time: " + secondsLeft;
+    questionsEl.removeAttribute("class");
 
-            if (secondsLeft <= 0) {
-                clearInterval(holdInterval);
-                allDone();
-                currentTime.textContent = "Time's up!";
-            }
-        }, 1000);
-    }
-    render(questionIndex);
-});
-
-// Renders questions and choices to page: 
-function render(questionIndex) {
-    // Clears existing data 
-    questionsDiv.innerHTML = "";
-    ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
-    for (let i = 0; i < questions.length; i++) {
-        // Appends question title only
-        let userQuestion = questions[questionIndex].title;
-        //let userChoices = questions[questionIndex].choices;
-        questionsDiv.textContent = userQuestion;
-    }
-    // New for each for question choices
-    userChoices.forEach(function (newItem) {
-        let listItem = document.createElement("li");
-        listItem.textContent = newItem;
-        questionsDiv.appendChild(ulCreate);
-        ulCreate.appendChild(listItem);
-        listItem.addEventListener("click", (compare));
-    })
+    getQuestion();
 }
+
+function getQuestion() {
+    console.log(questions);
+    let currentQuestion = questions[questionIndex];
+    console.log(currentQuestion);
+    let questionTitle = document.getElementById("question-title");
+    questionTitle.textContent = currentQuestion.title;
+     let questionChoices = document.getElementById("choices");
+     
+
+    let choicesList = document.createElement("ul");
+    for (let i = 0; i < currentQuestion.choices.length; i++) {
+        let listEl = document.createElement("li");
+        listEl.textContent = currentQuestion.choices[i]; 
+        listEl.addEventListener("click",handleClick);
+        choicesList.appendChild(listEl);
+
+        //add event listener to each choice
+
+    }
+    choicesEl.appendChild(choicesList);
+
+} 
+function handleClick() {
+alert("hi");
+}
+startBtn.addEventListener("click",startQuiz);
+
