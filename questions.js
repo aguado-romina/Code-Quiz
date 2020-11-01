@@ -33,11 +33,14 @@ let questionIndex = 0;
 let time = questions.length * 15;
 let timerId; 
 
-//Variables to reference elements in Index.html//
-let questionsEl = document.getElementById("questions");
-//let timerEl = document.getElementById.length("currentTime");
-let choicesEl = document.getElementById("choices");
-let startBtn = document.getElementById("start");
+//Variables to reference elements in Index.html:
+let currentTimeEl = document.getElementById("currentTime");
+let wrapperEl = document.getElementById("wrapper");
+let firstScreenEl = document.getElementById("firstScreen");
+let startButtonEl = document.getElementById("startButton");
+let quizQuestionsEl = document.getElementById("quizQuestions");
+let questionsTitleEl = document.getElementById("questionsTitle");
+let QuestionsChoicesEl = document.getElementById("QuestionsChoices");
 
 //Funtion for quiz start//
 function startQuiz() { 
@@ -73,6 +76,7 @@ function getQuestion() {
 
 } 
 function handleClick() {
+    if (choices === )
 alert("hi");
 }
 startBtn.addEventListener("click",startQuiz);

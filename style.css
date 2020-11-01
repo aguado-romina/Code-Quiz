@@ -1,5 +1,11 @@
 
+body {
+   
+}
 
+.hide {
+    display: none;
+}
 
  #wrapper {
     position: absolute;
