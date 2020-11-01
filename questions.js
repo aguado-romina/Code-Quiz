@@ -40,44 +40,42 @@ let firstScreenEl = document.getElementById("firstScreen");
 let startButtonEl = document.getElementById("startButton");
 let quizQuestionsEl = document.getElementById("quizQuestions");
 let questionsTitleEl = document.getElementById("questionsTitle");
-let QuestionsChoicesEl = document.getElementById("QuestionsChoices");
+let questionsChoicesEl = document.getElementById("QuestionsChoices");
 
 //Funtion for quiz start//
 function startQuiz() { 
-    //also start timer//
-    let startScreenEl = document.getElementById("quizQuestions");
-    startScreenEl.setAttribute("class", "hide");
+    firstScreenEl.setAttribute("class", "hide");
+    quizQuestionsEl.removeAttribute("class");
 
-    questionsEl.removeAttribute("class");
-
+    
     getQuestion();
 }
 
 function getQuestion() {
-    console.log(questions);
+   
     let currentQuestion = questions[questionIndex];
-    console.log(currentQuestion);
-    let questionTitle = document.getElementById("question-title");
-    questionTitle.textContent = currentQuestion.title;
-     let questionChoices = document.getElementById("choices");
-     
+    questionsTitleEl.textContent = currentQuestion.title;
 
-    let choicesList = document.createElement("ul");
-    for (let i = 0; i < currentQuestion.choices.length; i++) {
-        let listEl = document.createElement("li");
-        listEl.textContent = currentQuestion.choices[i]; 
-        listEl.addEventListener("click",handleClick);
-        choicesList.appendChild(listEl);
+    questionsChoicesEl.innerHTML = "";
+    
+    currentQuestion.choices.forEach(function(choice, i) {
+        // create new button for each choice
+        var choiceNode = document.createElement("button");
+        choiceNode.setAttribute("class", "choice");
+        choiceNode.setAttribute("value", choice);
+    
+        choiceNode.textContent = i + 1 + ". " + choice;
+    
+        // attach click event listener to each choice
+        choiceNode.onclick = questionClick;
+    
+        // display on the page
+        choicesEl.appendChild(choiceNode);
+      });
 
-        //add event listener to each choice
-
-    }
-    choicesEl.appendChild(choicesList);
+    
 
 } 
-function handleClick() {
-    if (choices === )
-alert("hi");
-}
-startBtn.addEventListener("click",startQuiz);
+
+startButtonEl.addEventListener("click",startQuiz);
 
