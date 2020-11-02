@@ -99,6 +99,10 @@ function questionClick() {
     console
     // penalize time
     time -= 15;
+    if (time < 0) {
+        time = 0;
+      }
+    currentTimeEl.textContent = time;  
     feedbackEl.textContent = "Wrong!";
   }
    // flash right/wrong feedback on page for half a second
@@ -131,6 +135,11 @@ function questionClick() {
   
     // hide questions section
     questionsEl.setAttribute("class", "hide");
+  }
+  if (questionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
   }
   
 }
