@@ -52,10 +52,10 @@ function startQuiz() {
   firstScreenEl.setAttribute("class", "hide");
   quizQuestionsEl.removeAttribute("class");
 
-  // timerId = setInterval(clockTick, 1000);
+  timerId = setInterval(clockTick, 1000);
 
   // // show starting time
-  // currentTimeEl.textContent = time;
+  currentTimeEl.textContent = time;
   getQuestion();
 }
 
@@ -90,9 +90,13 @@ function questionClick() {
 
   if (this.value === questions[questionIndex].answer) {
     console.log("correct answer");
+
+
     feedbackEl.textContent = "Correct!";
   } else {
     console.log("wrong answer");
+
+
     feedbackEl.textContent = "Wrong!";
   }
    // flash right/wrong feedback on page for half a second
@@ -110,9 +114,36 @@ function questionClick() {
     getQuestion();
     console.log("next question");
   }
+
+  function quizEnd() {
+    // stop timer
+    clearInterval(timerId);
+  
+    // show end screen
+    let endScreenEl = document.getElementById("end-screen");
+    endScreenEl.removeAttribute("class");
+  
+    // show final score
+    let finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textContent = time;
+  
+    // hide questions section
+    questionsEl.setAttribute("class", "hide");
+  }
   
 }
 
-//function endQuiz
+function clockTick() {
+    // update time
+    time--;
+    timerEl.textContent = time;
+  
+    // check if user ran out of time
+    if (time <= 0) {
+      quizEnd();
+    }
+  }
+
+
 
 startButtonEl.addEventListener("click", startQuiz);
