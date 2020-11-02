@@ -2,34 +2,12 @@
 body {
     background-color: lightgrey;
     font-family: 'Arimo', sans-serif;
+    background-image: url("Assets/bulb-5665770_1920.jpg");
+    background-color: #cccccc;
 }
-
 .wrapper {
     text-align: center;
-   
-
-}
-h1 {
-    text-align: center;
-    margin-top: 15%;   
-}
-p {
-    text-align: center;
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 5%;
-
-}
-button {
-    border-radius: 8px;
-    font-family: 'Arimo', sans-serif;
-}    
-.hide {
-    display: none;
-}
-
-
- .wrapper {
+    margin-bottom: 5%;
     position: absolute;
     left: 30%;
     top: 20%;
@@ -38,56 +16,53 @@ button {
     border: 1px solid gray;
     background-color: whitesmoke;
 }
-
-
-#startTime {
-    background-color: purple;
-    margin-left: 33%;
-    padding: 15px 32px;
-    font-size: 20px;
-    color: white;
-}
-#questionsDiv {
-    margin: 20px;
-}
-
-#currentTime {
-    float: right;
-}
-
-#goBack {
-    background-color: purple;
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    left: 55%;
-    width: auto;
+h1, h2 {
     text-align: center;
-    text-decoration: none;
+    margin-top: 15%; 
+    color: purple;
+    font-family: 'Arimo', sans-serif;  
 }
-
-
-
-#clear {
-    background-color: purple;
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    right: 5%;
+p {
     text-align: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: purple;
 }
-
+button {
+    border-radius: 8px;
+    font-family: 'Arimo', sans-serif;
+    color: purple;
+    font-weight: bold;
+}    
+.hide {
+    display: none;
 }
-
-textarea {
-    width: 90%;
+.quizTimer {
+    font-size: 20px;
+    color: purple;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+#questionsTitle {
+    font-family: 'Arimo', sans-serif;
     margin: 20px;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: purple;
 }
-
+#feedback {
+    font-family: 'Arimo', sans-serif;
+    margin: 20px;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: purple;
+}
 #Submit {
     background-color: purple;
     margin-left: 33%;
@@ -96,30 +71,6 @@ textarea {
     color: white;
 }
 
-label {
-    margin-right: 10px;
-}
-input {
-    margin-bottom: 20px;
-    width: 50%;
-    border: 1px solid lightgray;
-}
-
-
-
-li {
-    background-color: purple;
-    margin-top: 10px;
-    padding: 5px 15px;
-    width: 80%;
-    font-size: 18px;
-    color: white;
-}
-
-#createDiv {
-    margin-top: 20px;
-    border-top: 1px solid lightgray;
-}
 
 /* Start media queries */
 /* A Media Query max-width: 786px */
@@ -142,14 +93,13 @@ margin-left: 20%;
     position: relative;
     left: 55%;
 }
-
 #clear {
     
     position: relative;
     right: 5%;
     
 }
-}
+
 
 /* A Media Query max-width: 640px */
 @media screen and (max-width: 640px) {
