@@ -4,9 +4,25 @@ body {
     font-family: 'Arimo', sans-serif;
 }
 
+.wrapper {
+    text-align: center;
+   
 
+}
+h1 {
+    text-align: center;
+    margin-top: 15%;   
+}
+p {
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
 button {
     border-radius: 8px;
+    font-family: 'Arimo', sans-serif;
 }    
 .hide {
     display: none;
@@ -89,9 +105,7 @@ input {
     border: 1px solid lightgray;
 }
 
-h1, p {
-    text-align: center;
-}
+
 
 li {
     background-color: purple;
