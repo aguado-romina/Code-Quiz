@@ -9,7 +9,9 @@ To help you become familiar with these tests and give you a chance to apply the 
 Deployed
 
 ## Screenshots
-
+![IMG-README.1](IMG-README.1);
+![IMG-README.1](IMG-README.2);
+![IMG-README.1](IMG-README.3);
 
 ## Tech/framework used
 <b>Built with</b>
