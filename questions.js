@@ -45,6 +45,7 @@ let startButtonEl = document.getElementById("startButton");
 let quizQuestionsEl = document.getElementById("quizQuestions");
 let questionsTitleEl = document.getElementById("questionsTitle");
 let questionsChoicesEl = document.getElementById("questionsChoices");
+let feedbackEl = document.getElementById("feedback");
 
 //Funtion for quiz start//
 function startQuiz() {
@@ -89,9 +90,16 @@ function questionClick() {
 
   if (this.value === questions[questionIndex].answer) {
     console.log("correct answer");
+    feedbackEl.textContent = "Correct!";
   } else {
     console.log("wrong answer");
+    feedbackEl.textContent = "Wrong!";
   }
+   // flash right/wrong feedback on page for half a second
+   feedbackEl.setAttribute("class", "feedback");
+   setTimeout(function() {
+     feedbackEl.setAttribute("class", "feedback hide");
+   }, 1000);
 
   questionIndex++;
   console.log(questionIndex);
@@ -102,6 +110,7 @@ function questionClick() {
     getQuestion();
     console.log("next question");
   }
+  
 }
 
 //function endQuiz
