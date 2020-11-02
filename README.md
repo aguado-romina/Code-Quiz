@@ -1,6 +1,4 @@
 # 04 Web APIs: Code Quiz
-
-
 ## Task
 
 As you proceed in your journey to becoming a full-stack web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
@@ -49,6 +47,7 @@ Pull Requests: Pull Requests are always welcome.
     The relevant issue number, if applicable.
 
 ## Credits
+* Got help from askBCS and my tutor Nikolas Haug. 
 
 
 
