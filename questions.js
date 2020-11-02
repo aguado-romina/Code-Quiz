@@ -136,7 +136,7 @@ function questionClick() {
 function clockTick() {
     // update time
     time--;
-    timerEl.textContent = time;
+    currentTimeEl.textContent = time;
   
     // check if user ran out of time
     if (time <= 0) {
