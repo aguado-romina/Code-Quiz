@@ -82,6 +82,27 @@ function getQuestion() {
   });
 }
 
+function quizEnd() {
+    // stop timer
+    clearInterval(timerId);
+  
+    // show end screen
+    let endScreenEl = document.getElementById("end-screen");
+    endScreenEl.removeAttribute("class");
+  
+    // show final score
+    let finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textContent = time;
+  
+    // hide questions section
+    questionsEl.setAttribute("class", "hide");
+  }
+  if (questionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
+  
 function questionClick() {
   //console.log("click");
   // console.log(questions[questionIndex]);
@@ -120,27 +141,6 @@ function questionClick() {
     getQuestion();
     console.log("next question");
   }
-
-  function quizEnd() {
-    // stop timer
-    clearInterval(timerId);
-  
-    // show end screen
-    let endScreenEl = document.getElementById("end-screen");
-    endScreenEl.removeAttribute("class");
-  
-    // show final score
-    let finalScoreEl = document.getElementById("final-score");
-    finalScoreEl.textContent = time;
-  
-    // hide questions section
-    questionsEl.setAttribute("class", "hide");
-  }
-  if (questionIndex === questions.length) {
-    quizEnd();
-  } else {
-    getQuestion();
-  }
   
 }
 
@@ -153,7 +153,7 @@ function clockTick() {
     if (time <= 0) {
       quizEnd();
     }
-  }
+}
 
 
 
