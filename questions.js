@@ -96,7 +96,9 @@ function questionClick() {
   } else {
     console.log("wrong answer");
 
-
+    console
+    // penalize time
+    time -= 15;
     feedbackEl.textContent = "Wrong!";
   }
    // flash right/wrong feedback on page for half a second
