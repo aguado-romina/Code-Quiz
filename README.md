@@ -9,10 +9,9 @@ To help you become familiar with these tests and give you a chance to apply the 
 Deployed
 
 ## Screenshots
-<img src="IMG-README.1.png">
-<img src="IMG-README.2.png">
-<img src="IMG-README.3.png">
-
+![alt text](IMG-README.1.png)
+![alt text](IMG-README.2.png)
+![alt text](IMG-README.3.png)
 
 
 ## Tech/framework used
